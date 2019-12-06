@@ -1,9 +1,11 @@
+.. image:: https://i.imgur.com/Tu5GnX3.jpg
+
 ***********
 ABR Control
 ***********
 
 ABR_Control: The ABR_Control library is a python library for the control and
-path planning of robotic arms in various simulation enviornments. ABR_Control
+path planning of robotic arms in various simulation environments. ABR_Control
 currently supports and provides API's for Mujoco, VREP, and Pygame. Simple
 one-joint, two-joint, and three-joint models are provided, in addition to a
 more detailed model of the Kinova Jaco 2. There is also an API and config
@@ -55,7 +57,7 @@ If you would like to use the Pygame API, from you anaconda environment run::
 
 Vrep
 ----
-We support up to Vrep 4.0. You will need to `download Vrep <http://coppeliarobotics.com/previousVersions/>`_
+We support up to Vrep 4.0. You will need to download `Vrep <http://coppeliarobotics.com/previousVersions/>`_
 and follow the installation instructions.
 
 PyDMPs
@@ -121,7 +123,7 @@ controllers using the Python and Cython config functions.
 
 When using Mujoco the process is a bit different. Mujoco handles the
 generation of transformation matrices and only requires an xml config be made
-describing the kinematic chain. The `Mujoco API <http://www.mujoco.org/book/modeling.html/>`_
+describing the kinematic chain. The `Mujoco API <http://www.mujoco.org/book/modeling.html>`_
 is quite heavily documented, including the modelling process. To summarize,
 the mujoco arm config is written in xml where the kinematic chain is defined
 with ``<body>``, ``<geom>`` and ``<joint>`` tags. A ``<geom>`` defines a shape, whereas
@@ -165,7 +167,7 @@ interpolation (SLERP) to generate a set of orientations from a start to a target
 quaternion. The time profile will match that of the path planner instantiated
 (ie: a linear path planner will have a linear step in orientation over time, with
 a constant change in orientation, whereas a second order path planner will have a
-bell shaped profile with the largest steps occuring during the middle of the movement,
+bell shaped profile with the largest steps occurring during the middle of the movement,
 with an acceleration and deceleration at the start and end, respectively)
 
 In addition to filters, there is a second order implementation using dynamic
@@ -256,4 +258,4 @@ To run the Mujoco examples, you will be promted to download any mesh or texture
 files, if they are used in the xml config, similarly to the VREP arm model.
 Once the download completes the simulation will start. If you are using the
 forked Mujoco-Py repository (See Optional Installation above) you can exit
-the simulation with the ESC key.
+the simulation with the ESC key and pause with the spacebar.

@@ -3,7 +3,7 @@ import zipfile
 import requests
 
 
-def check_and_download(name, google_id, files, force_download=False):
+def check_and_download(name, google_id, files=None, force_download=False):
     """
     Checks if the meshes folder exists in the xml directory
     If not it will ask the user if they want to download them
@@ -28,9 +28,9 @@ def check_and_download(name, google_id, files, force_download=False):
         if not os.path.isfile(name) and not os.path.isdir(name):
             print('Checking for mesh files in : ', name)
             files_missing = True
-        else:
+        elif files is not None:
             mesh_files = [f for f in os.listdir(name)
-                    if os.path.isfile(os.path.join(name, f))]
+                          if os.path.isfile(os.path.join(name, f))]
             # files_missing = all(elem in sorted(mesh_files) for elem in sorted(files))
             files_missing = set(files).difference(set(mesh_files))
             if files_missing:
