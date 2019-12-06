@@ -45,6 +45,7 @@ make sure you are in your anaconda environment and run::
     cd mujoco-py
     pip install -e .
     pip install glfw=>1.8.3
+    pip install requests
 
 Pygame
 ------
