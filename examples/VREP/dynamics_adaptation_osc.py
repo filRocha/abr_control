@@ -8,7 +8,7 @@ import traceback
 
 from abr_control.arms import jaco2 as arm
 from abr_control.controllers import OSC, Damping, signals
-from abr_control.interfaces import VREP
+from abr_control.interfaces import COPPELIASIM
 
 
 # initialize our robot config for the jaco2
@@ -38,7 +38,7 @@ adapt = signals.DynamicsAdaptation(
     variances=[1.57, 1.57])
 
 # create our VREP interface
-interface = VREP(robot_config, dt=.005)
+interface = COPPELIASIM(robot_config, dt=.005)
 interface.connect()
 interface.send_target_angles(q=robot_config.START_ANGLES)
 
